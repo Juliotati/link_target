@@ -11,29 +11,57 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Link Target
 
-## Features
+[![pub package](https://img.shields.io/pub/v/link_target.svg)](https://pub.dev/packages/link_target)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/pub/link_target)
+![License](https://img.shields.io/github/license/juliotati/link_target)
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Adds hyperlink preview behaviour on hover found on browsers.
+
+## Preview
+
+https://github.com/user-attachments/assets/b58f76fb-0e4e-4af5-98ba-2c6d130ade30
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+Add `link_target` to `pubspec.yaml` of your project:
+```sh
+dart pub add
 ```
 
-## Additional information
+Import it in your Dart code:
+```dart
+import 'package:link_target/link_target.dart';
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- Make sure to wrap your `home` widget with `LinkTargetRegion`
+
+## Code sample
+
+```dart
+import 'package:link_target/link_target.dart';
+
+class MyAppInkwellOrGestureDetector extends StatelessWidget {
+  const MyAppInkwellOrGestureDetector({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return LinkTargetDetector(
+      target: 'https://dart.dev/',
+      child: GestureDetector(
+        child: Text(
+          'Preview dart.dev',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+      ),
+    );
+  }
+}
+```
+
+View the demo app in [example](https://github.com/Juliotati/link_target/tree/main/example) directory for complete sample.
+
+## License
+
+https://github.com/juliotati/link_target/blob/main/LICENSE
