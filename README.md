@@ -64,4 +64,4 @@ View the demo app in [example](https://github.com/Juliotati/link_target/tree/mai
 
 ## License
 
-https://github.com/juliotati/link_target/blob/main/LICENSE
+Link target is under [MIT license](https://github.com/juliotati/link_target/blob/main/LICENSE)
