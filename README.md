@@ -35,7 +35,7 @@ Import it in your Dart code:
 import 'package:link_target/link_target.dart';
 ```
 
-- Make sure to wrap your `home` widget with `LinkTargetRegion`
+- Make sure to wrap your material `home` widget with `LinkTargetRegion`
 
 ## Code sample
 

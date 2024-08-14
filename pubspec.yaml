@@ -3,6 +3,12 @@ description: "Adds hyperlink preview behaviour on hover found on browsers."
 version: 0.0.1
 homepage: https://github.com/juliotati/link_target
 
+issue_tracker: https://github.com/juliotati/link_targetissues
+topics:
+  - web
+  - hyperlink
+  - link-preview
+
 environment:
   sdk: ^3.5.0
   flutter: ">=1.17.0"

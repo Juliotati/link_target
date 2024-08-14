@@ -5,11 +5,16 @@ import 'package:provider/provider.dart';
 
 @immutable
 final class LinkTargetRegion extends StatelessWidget {
-  const LinkTargetRegion({
-    required this.child,
-    super.key,
-  });
+  /// Displays a target URL preview when a mouse hover is detected on web by the
+  /// widget wrapped in [LinkTargetDetector].
+  ///
+  /// The [child] argument must not be null.
+  const LinkTargetRegion({required this.child, super.key});
 
+  /// The widget below [LinkTargetRegion] in the tree.
+  ///
+  /// This should be directly your apps [MaterialApp] as the child of `home` or
+  /// `builder` if in use for the best result.
   final Widget child;
 
   @override

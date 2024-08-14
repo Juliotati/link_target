@@ -4,13 +4,22 @@ import 'package:provider/provider.dart';
 
 @immutable
 final class LinkTargetDetector extends StatefulWidget {
+  /// Creates a widget that detects when the mouse hovers over the child.
+  ///
+  /// The [child] argument must not be null.
+  /// The [target] argument must not be null.
   const LinkTargetDetector({
     required this.child,
     required this.target,
     super.key,
   });
 
+  /// The widget below [LinkTargetDetector] in the tree.
+  ///
+  /// This would usually be your apps' common [GestureDetector] or [InkWell].
   final Widget child;
+
+  /// The target URL should by [LinkTargetRegion] on hover.
   final String target;
 
   @override
