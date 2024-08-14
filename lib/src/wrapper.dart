@@ -49,7 +49,7 @@ final class LinkTargetRegion extends StatelessWidget {
                             child: Text(
                               provider.linkTarget,
                               style: const TextStyle(
-                                fontSize: 11,
+                                fontSize: 12,
                                 color: Color.fromRGBO(240, 240, 240, 1.0),
                               ),
                             ),
