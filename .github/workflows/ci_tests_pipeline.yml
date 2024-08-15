@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test-station:
+  analyze-and-test:
     runs-on: macos-latest
     steps:
       - name: setup-repo
