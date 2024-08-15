@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 final class LinkTargetDetector extends StatefulWidget {
   /// Creates a widget that detects when the mouse hovers over the child.
   ///
-  /// The [child] argument must not be null.
-  /// The [target] argument must not be null.
+  /// [child] argument must not be null.
+  /// [target] is required but can be null.
   const LinkTargetDetector({
     required this.child,
     required this.target,
@@ -23,7 +23,9 @@ final class LinkTargetDetector extends StatefulWidget {
   final Widget child;
 
   /// The target URL should by [LinkTargetRegion] on hover.
-  final String target;
+  ///
+  /// Null or empty strings are ignored.
+  final String? target;
 
   @override
   State<LinkTargetDetector> createState() => _LinkTargetDetectorState();
@@ -32,12 +34,20 @@ final class LinkTargetDetector extends StatefulWidget {
 class _LinkTargetDetectorState extends State<LinkTargetDetector> {
   bool _isHovered = false;
 
+  String get target => widget.target ?? '';
+
+  String get comparableTarget => target.trim().toLowerCase();
+
   @override
   Widget build(BuildContext context) {
     if (!kIsWeb) {
       if (!Platform.environment.containsKey('FLUTTER_TEST')) {
         return widget.child;
       }
+    }
+
+    if (comparableTarget.isEmpty || comparableTarget == 'null') {
+      return widget.child;
     }
 
     return MouseRegion(
@@ -51,14 +61,14 @@ class _LinkTargetDetectorState extends State<LinkTargetDetector> {
 
         Future.delayed(duration, () {
           if (!(_isHovered && context.mounted)) return;
-          context.read<LinkTargetProvider>().onHover(widget.target);
+          context.read<LinkTargetProvider>().onHover(target);
         });
       },
       onExit: (_) {
         Future.delayed(const Duration(milliseconds: 300), () {
           _isHovered = false;
           if (!context.mounted) return;
-          context.read<LinkTargetProvider>().onExit(widget.target);
+          context.read<LinkTargetProvider>().onExit(target);
         });
       },
       child: widget.child,
