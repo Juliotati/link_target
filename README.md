@@ -19,15 +19,15 @@ and the Flutter guide for
 
 Adds hyperlink glance behaviour on hover found on the bottom left of the browser page.
 
-## Preview
 
-https://github.com/user-attachments/assets/b4d9b2e4-33da-4501-b71d-c402b7d9d9d9
+![link_target_glance](https://github.com/user-attachments/assets/ec50439b-75d3-44bd-a01f-290a713be9d1)
+
 
 ## Getting started
 
 Add `link_target` to `pubspec.yaml` of your project:
 ```sh
-dart pub add
+dart pub add link_target
 ```
 
 Import it in your Dart code:
