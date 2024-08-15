@@ -17,7 +17,7 @@ and the Flutter guide for
 [![pub package](https://img.shields.io/pub/v/link_target.svg)](https://pub.dev/packages/link_target)
 ![License](https://img.shields.io/github/license/Juliotati/link_target)
 
-Adds hyperlink preview behaviour on hover found on browsers.
+Adds hyperlink glance behaviour on hover found on the bottom left of the browser page.
 
 ## Preview
 
@@ -50,7 +50,7 @@ class MyAppInkwellOrGestureDetector extends StatelessWidget {
     return LinkTargetDetector(
       target: 'https://dart.dev/',
       child: GestureDetector(
-        child: Text('Preview dart.dev'),
+        child: Text('Glance dart.dev\'s link'),
       ),
     );
   }

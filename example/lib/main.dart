@@ -17,7 +17,7 @@ class LinkTargetExample extends StatelessWidget {
         child: Scaffold(
           body: Center(
             child: Stack(
-               children: [
+              children: [
                 Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,20 +25,31 @@ class LinkTargetExample extends StatelessWidget {
                     children: [
                       LinkTargetDetector(
                         target: 'https://github.com/flutter/flutter',
-                        child: Text('Preview flutter repo', style: titleMedium),
+                        child: Text(
+                          'Glance flutter\'s repo link',
+                          style: titleMedium,
+                        ),
                       ),
                       LinkTargetDetector(
                         target: 'https://flutter.dev/development',
-                        child: Text('Preview flutter.dev', style: titleMedium),
+                        child: Text(
+                          'Glance flutter.dev\'s link',
+                          style: titleMedium,
+                        ),
                       ),
                       LinkTargetDetector(
                         target: 'https://dart.dev/',
-                        child: Text('Preview dart.dev', style: titleMedium),
+                        child: Text(
+                          'Glance dart.dev\'s link',
+                          style: titleMedium,
+                        ),
                       ),
                       LinkTargetDetector(
                         target: 'https://www.youtube.com/@flutterdev',
-                        child:
-                            Text('Preview Flutter YouTube', style: titleMedium),
+                        child: Text(
+                          'Glance Flutter YouTube\'s link',
+                          style: titleMedium,
+                        ),
                       ),
                     ],
                   ),

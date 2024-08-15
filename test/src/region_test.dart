@@ -57,7 +57,7 @@ void main() {
       await tester.pumpWidget(const LinkTargetExample());
 
       await hasPositionedAndAnimatedSwitchWidget();
-      await hoverOnText(tester, 'Preview flutter repo');
+      await hoverOnText(tester, 'Glance flutter\'s repo link');
 
       final card = find.byType(Card).evaluate().first.widget as Card;
 
@@ -96,7 +96,7 @@ void main() {
       expect(find.text('https://github.com/flutter/flutter'), findsNothing);
 
       // 1. Hovers on a single widget
-      final hover = await hoverOnText(tester, 'Preview flutter repo');
+      final hover = await hoverOnText(tester, 'Glance flutter\'s repo link');
 
       expect(find.text('https://github.com/flutter/flutter'), findsOneWidget);
 
@@ -112,7 +112,7 @@ void main() {
       expect(find.text('https://github.com/flutter/flutter'), findsNothing);
 
       // 1. Hovers on the first widget
-      final hover = await hoverOnText(tester, 'Preview flutter repo');
+      final hover = await hoverOnText(tester, 'Glance flutter\'s repo link');
 
       expect(find.text('https://github.com/flutter/flutter'), findsOneWidget);
       expect(find.text('https://flutter.dev/development'), findsNothing);
@@ -152,19 +152,19 @@ class LinkTargetExample extends StatelessWidget {
               children: [
                 LinkTargetDetector(
                   target: 'https://github.com/flutter/flutter',
-                  child: Text('Preview flutter repo'),
+                  child: Text('Glance flutter\'s repo link'),
                 ),
                 LinkTargetDetector(
                   target: 'https://flutter.dev/development',
-                  child: Text('Preview flutter.dev'),
+                  child: Text('Glance flutter.dev\'s link'),
                 ),
                 LinkTargetDetector(
                   target: 'https://dart.dev/',
-                  child: Text('Preview dart.dev'),
+                  child: Text('Glance dart.dev\'s link'),
                 ),
                 LinkTargetDetector(
                   target: 'https://www.youtube.com/@flutterdev',
-                  child: Text('Preview Flutter YouTube'),
+                  child: Text('Glance Flutter\'s YouTube link'),
                 ),
               ],
             ),
