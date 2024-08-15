@@ -22,7 +22,8 @@ final class LinkTargetDetector extends StatefulWidget {
   /// This would usually be your apps' common [GestureDetector] or [InkWell].
   final Widget child;
 
-  /// The target URL should by [LinkTargetRegion] on hover.
+  /// The target URL to be displayed by [LinkTargetRegion] at the bottom of the
+  /// screen on hover.
   ///
   /// Null or empty strings are ignored.
   final String? target;
