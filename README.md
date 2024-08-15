@@ -21,7 +21,7 @@ Adds hyperlink preview behaviour on hover found on browsers.
 
 ## Preview
 
-https://github.com/user-attachments/assets/b58f76fb-0e4e-4af5-98ba-2c6d130ade30
+https://github.com/user-attachments/assets/9c9da1a6-2854-4ace-bcbb-e3c48c91e2db
 
 ## Getting started
 
@@ -50,10 +50,7 @@ class MyAppInkwellOrGestureDetector extends StatelessWidget {
     return LinkTargetDetector(
       target: 'https://dart.dev/',
       child: GestureDetector(
-        child: Text(
-          'Preview dart.dev',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
+        child: Text('Preview dart.dev'),
       ),
     );
   }
