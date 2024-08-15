@@ -21,7 +21,7 @@ Adds hyperlink glance behaviour on hover found on the bottom left of the browser
 
 ## Preview
 
-https://github.com/user-attachments/assets/9c9da1a6-2854-4ace-bcbb-e3c48c91e2db
+https://github.com/user-attachments/assets/b4d9b2e4-33da-4501-b71d-c402b7d9d9d9
 
 ## Getting started
 
