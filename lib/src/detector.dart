@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:link_target/src/provider.dart';
 import 'package:provider/provider.dart';
@@ -31,6 +34,12 @@ class _LinkTargetDetectorState extends State<LinkTargetDetector> {
 
   @override
   Widget build(BuildContext context) {
+    if (!kIsWeb) {
+      if (!Platform.environment.containsKey('FLUTTER_TEST')) {
+        return widget.child;
+      }
+    }
+
     return MouseRegion(
       onHover: (_) {
         if (_isHovered) return;

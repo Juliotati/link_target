@@ -10,12 +10,9 @@ class LinkTargetExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleMedium = Theme.of(context).textTheme.titleMedium;
     return MaterialApp(
       title: 'Link Target Example',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: LinkTargetRegion(
         child: Scaffold(
           body: Center(
@@ -26,31 +23,19 @@ class LinkTargetExample extends StatelessWidget {
               children: [
                 LinkTargetDetector(
                   target: 'https://github.com/flutter/flutter',
-                  child: Text(
-                    'Preview flutter repo',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  child: Text('Preview flutter repo', style: titleMedium),
                 ),
                 LinkTargetDetector(
                   target: 'https://flutter.dev/development',
-                  child: Text(
-                    'Preview flutter.dev',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  child: Text('Preview flutter.dev', style: titleMedium),
                 ),
                 LinkTargetDetector(
                   target: 'https://dart.dev/',
-                  child: Text(
-                    'Preview dart.dev',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  child: Text('Preview dart.dev', style: titleMedium),
                 ),
                 LinkTargetDetector(
                   target: 'https://www.youtube.com/@flutterdev',
-                  child: Text(
-                    'Preview Flutter YouTube',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  child: Text('Preview Flutter YouTube', style: titleMedium),
                 ),
               ],
             ),
