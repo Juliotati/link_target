@@ -10,47 +10,54 @@ class LinkTargetExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleMedium = Theme.of(context).textTheme.titleMedium;
     return MaterialApp(
       title: 'Link Target Example',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: LinkTargetRegion(
         child: Scaffold(
           body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
+            child: Stack(
               children: [
-                LinkTargetDetector(
-                  target: 'https://github.com/flutter/flutter',
-                  child: Text(
-                    'Preview flutter repo',
-                    style: Theme.of(context).textTheme.titleMedium,
+                Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      LinkTargetDetector(
+                        target: 'https://github.com/flutter/flutter',
+                        child: Text(
+                          'Glance flutter\'s repo link',
+                          style: titleMedium,
+                        ),
+                      ),
+                      LinkTargetDetector(
+                        target: 'https://flutter.dev/development',
+                        child: Text(
+                          'Glance flutter.dev\'s link',
+                          style: titleMedium,
+                        ),
+                      ),
+                      LinkTargetDetector(
+                        target: 'https://dart.dev/',
+                        child: Text(
+                          'Glance dart.dev\'s link',
+                          style: titleMedium,
+                        ),
+                      ),
+                      LinkTargetDetector(
+                        target: 'https://www.youtube.com/@flutterdev',
+                        child: Text(
+                          'Glance Flutter YouTube\'s link',
+                          style: titleMedium,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                LinkTargetDetector(
-                  target: 'https://flutter.dev/development',
-                  child: Text(
-                    'Preview flutter.dev',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ),
-                LinkTargetDetector(
-                  target: 'https://dart.dev/',
-                  child: Text(
-                    'Preview dart.dev',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ),
-                LinkTargetDetector(
-                  target: 'https://www.youtube.com/@flutterdev',
-                  child: Text(
-                    'Preview Flutter YouTube',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                const Positioned(
+                  left: 10.0,
+                  bottom: 10.0,
+                  child: Icon(Icons.arrow_downward, size: 150.0),
                 ),
               ],
             ),

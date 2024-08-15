@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 /// Manages and provides link target displayed by [LinkTargetRegion].
 final class LinkTargetProvider extends ChangeNotifier {

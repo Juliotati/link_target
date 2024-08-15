@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:link_target/src/provider.dart';
@@ -5,8 +7,8 @@ import 'package:provider/provider.dart';
 
 @immutable
 final class LinkTargetRegion extends StatelessWidget {
-  /// Displays a target URL preview when a mouse hover is detected on web by the
-  /// widget wrapped in [LinkTargetDetector].
+  /// Displays the full URL when a mouse hover is detected on web by the widget
+  /// wrapped in [LinkTargetDetector].
   ///
   /// The [child] argument must not be null.
   const LinkTargetRegion({required this.child, super.key});
@@ -19,7 +21,11 @@ final class LinkTargetRegion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!kIsWeb) return child;
+    if (!kIsWeb) {
+      if (!Platform.environment.containsKey('FLUTTER_TEST')) {
+        return child;
+      }
+    }
 
     return ListenableProvider(
       create: (_) => LinkTargetProvider(),
@@ -53,6 +59,8 @@ final class LinkTargetRegion extends StatelessWidget {
                             ),
                             child: Text(
                               provider.linkTarget,
+                              maxLines: 1,
+                              softWrap: false,
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Color.fromRGBO(240, 240, 240, 1.0),

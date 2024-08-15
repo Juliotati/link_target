@@ -13,15 +13,15 @@ and the Flutter guide for
 
 # Link Target
 
+[![Tests Pipeline](https://github.com/Juliotati/link_target/actions/workflows/ci_tests_pipeline.yml/badge.svg)](https://github.com/Juliotati/link_target/actions/workflows/ci_tests_pipeline.yml)
 [![pub package](https://img.shields.io/pub/v/link_target.svg)](https://pub.dev/packages/link_target)
-![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/pub/link_target)
-![License](https://img.shields.io/github/license/juliotati/link_target)
+![License](https://img.shields.io/github/license/Juliotati/link_target)
 
-Adds hyperlink preview behaviour on hover found on browsers.
+Adds hyperlink glance behaviour on hover found on the bottom left of the browser page.
 
 ## Preview
 
-https://github.com/user-attachments/assets/b58f76fb-0e4e-4af5-98ba-2c6d130ade30
+https://github.com/user-attachments/assets/b4d9b2e4-33da-4501-b71d-c402b7d9d9d9
 
 ## Getting started
 
@@ -50,10 +50,7 @@ class MyAppInkwellOrGestureDetector extends StatelessWidget {
     return LinkTargetDetector(
       target: 'https://dart.dev/',
       child: GestureDetector(
-        child: Text(
-          'Preview dart.dev',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
+        child: Text('Glance dart.dev\'s link'),
       ),
     );
   }
