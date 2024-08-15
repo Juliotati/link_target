@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/foundation.dart';
 
 /// Manages and provides link target displayed by [LinkTargetRegion].
@@ -16,7 +14,6 @@ final class LinkTargetProvider extends ChangeNotifier {
   /// Updates the target "URL" shown on the page by [LinkTargetRegion]
   void onHover(String value) {
     _linkTarget = value.trim();
-    if (kDebugMode) log(name: 'LinkTargetProvider', 'onHover: $_linkTarget');
     notifyListeners();
   }
 
