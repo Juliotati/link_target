@@ -13,9 +13,9 @@ and the Flutter guide for
 
 # Link Target
 
+[![Tests Pipeline](https://github.com/Juliotati/link_target/actions/workflows/ci_tests_pipeline.yml/badge.svg)](https://github.com/Juliotati/link_target/actions/workflows/ci_tests_pipeline.yml)
 [![pub package](https://img.shields.io/pub/v/link_target.svg)](https://pub.dev/packages/link_target)
-![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/pub/link_target)
-![License](https://img.shields.io/github/license/juliotati/link_target)
+![License](https://img.shields.io/github/license/Juliotati/link_target)
 
 Adds hyperlink preview behaviour on hover found on browsers.
 
