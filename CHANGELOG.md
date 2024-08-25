@@ -1,6 +1,10 @@
-## 0.1.0
+## 0.1.1
 
 * docs: Fixed issue tracker link on pub.dev
+* docs: Clarify platform support in README.md
+
+## 0.1.0
+
 * chore: Disable target link glancing on mobile browsers
 
 ## 0.0.2
