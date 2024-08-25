@@ -18,6 +18,7 @@ and the Flutter guide for
 ![License](https://img.shields.io/github/license/Juliotati/link_target)
 
 Adds hyperlink glance behaviour on hover found on the bottom left of the browser page.
+Safe to use on all platform without worrying exception thrown due to platform checks.
 
 
 ![link_target_glance](https://github.com/user-attachments/assets/ec50439b-75d3-44bd-a01f-290a713be9d1)
