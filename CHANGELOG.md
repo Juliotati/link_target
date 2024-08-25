@@ -1,5 +1,5 @@
 ## 0.1.1
-* 
+
 * docs: Fixed issue tracker link on pub.dev
 * docs: Clarify platform support in README.md
 
