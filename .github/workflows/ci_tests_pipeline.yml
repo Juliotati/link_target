@@ -25,11 +25,11 @@ jobs:
         with:
           cache: true
           channel: 'stable'
-          cache-key: 'flutter-macos-stable-3.24.0-x64'
-          cache-path: '${{ runner.tool_cache }}/flutter-macos-stable-3.24.0-x64-hash'
-          pub-cache-key: 'flutter-pub-macos-stable-3.24.0-x64-hash'
-          pub-cache-path: '${{ runner.tool_cache }}/flutter/stable-3.24.0-x64'
-          flutter-version: '3.24.0'
+          cache-key: 'flutter-macos-stable-3.24.1-x64'
+          cache-path: '${{ runner.tool_cache }}/flutter-macos-stable-3.24.1-x64-hash'
+          pub-cache-key: 'flutter-pub-macos-stable-3.24.1-x64-hash'
+          pub-cache-path: '${{ runner.tool_cache }}/flutter/stable-3.24.1-x64'
+          flutter-version: '3.24.1'
 
       - name: load-dependencies
         run: dart pub get
