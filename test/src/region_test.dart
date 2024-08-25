@@ -73,7 +73,7 @@ void main() {
       );
       expect(
         (card.child as Padding).padding,
-        const EdgeInsets.symmetric(vertical: 6.0, horizontal: 8.0),
+        const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
       );
 
       final text = (card.child as Padding).child as Text;
@@ -84,7 +84,8 @@ void main() {
       expect(
         text.style,
         const TextStyle(
-          fontSize: 12,
+          fontSize: 11.5,
+          overflow: TextOverflow.ellipsis,
           color: Color.fromRGBO(240, 240, 240, 1.0),
         ),
       );

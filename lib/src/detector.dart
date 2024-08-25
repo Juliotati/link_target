@@ -1,7 +1,5 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:link_target/src/platform_widget.dart';
 import 'package:link_target/src/provider.dart';
 import 'package:provider/provider.dart';
 
@@ -41,38 +39,35 @@ class _LinkTargetDetectorState extends State<LinkTargetDetector> {
 
   @override
   Widget build(BuildContext context) {
-    if (!kIsWeb) {
-      if (!Platform.environment.containsKey('FLUTTER_TEST')) {
-        return widget.child;
-      }
-    }
-
     if (comparableTarget.isEmpty || comparableTarget == 'null') {
       return widget.child;
     }
 
-    return MouseRegion(
-      onHover: (_) {
-        if (_isHovered) return;
-        _isHovered = true;
+    return LinkTargetPlatformWidget(
+      onNoRegion: widget.child,
+      onApplyRegion: MouseRegion(
+        onHover: (_) {
+          if (_isHovered) return;
+          _isHovered = true;
 
-        final duration = context.read<LinkTargetProvider>().hasTarget
-            ? const Duration(milliseconds: 0)
-            : const Duration(milliseconds: 550);
+          final duration = context.read<LinkTargetProvider>().hasTarget
+              ? const Duration(milliseconds: 0)
+              : const Duration(milliseconds: 550);
 
-        Future.delayed(duration, () {
-          if (!(_isHovered && context.mounted)) return;
-          context.read<LinkTargetProvider>().onHover(target);
-        });
-      },
-      onExit: (_) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          _isHovered = false;
-          if (!context.mounted) return;
-          context.read<LinkTargetProvider>().onExit(target);
-        });
-      },
-      child: widget.child,
+          Future.delayed(duration, () {
+            if (!(_isHovered && context.mounted)) return;
+            context.read<LinkTargetProvider>().onHover(target);
+          });
+        },
+        onExit: (_) {
+          Future.delayed(const Duration(milliseconds: 300), () {
+            _isHovered = false;
+            if (!context.mounted) return;
+            context.read<LinkTargetProvider>().onExit(target);
+          });
+        },
+        child: widget.child,
+      ),
     );
   }
 }
