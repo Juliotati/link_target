@@ -1,3 +1,7 @@
+## 0.1.2
+
+* docs: lower sdk constraint to `^3.0.0` from `^3.5.0`
+
 ## 0.1.1
 
 * docs: Fixed issue tracker link on pub.dev
